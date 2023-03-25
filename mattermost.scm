@@ -487,8 +487,8 @@ a colon-separated pair of hours and minutes."
    "\n"))
 
 (define (list-handles)
-  (let ((handles (sqlite-exec* %db "SELECT * FROM candidates ORDER BY last_participation ASC")))
-    (match handles
+  (let ((entries (sqlite-exec* %db "SELECT * FROM candidates ORDER BY last_participation ASC")))
+    (match entries
       (() "There are no candidates in the database.")
       (results
        (string-join
